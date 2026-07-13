@@ -35,40 +35,7 @@ export const siteContent: SiteContent = {
   projects: {
     heading: "Commercial Projects",
     description:
-      "A selection of products I'm building and maintaining. More projects will be added as they launch.",
-    items: [
-      {
-        id: "project-alpha",
-        name: "Project Alpha",
-        description:
-          "A productivity app that helps users organize daily tasks with a minimal, distraction-free interface.",
-        tags: ["Android", "React Native", "Productivity"],
-        status: "live",
-        links: {
-          playStore: "#",
-          website: "#",
-        },
-      },
-      {
-        id: "project-beta",
-        name: "Project Beta",
-        description:
-          "A utility tool for tracking personal finances with simple charts and export options.",
-        tags: ["Android", "Kotlin", "Finance"],
-        status: "in-development",
-        links: {
-          github: "#",
-        },
-      },
-      {
-        id: "project-gamma",
-        name: "Project Gamma",
-        description:
-          "A companion web dashboard for managing settings and data across mobile apps.",
-        tags: ["Next.js", "TypeScript", "Web"],
-        status: "coming-soon",
-      },
-    ],
+      "Mobile apps I'm building and maintaining. Tap a project to learn more.",
   },
   contact: {
     heading: "Contact",

@@ -4,16 +4,17 @@ export type NavItem = {
 };
 
 export type Project = {
-  id: string;
+  slug: string;
   name: string;
-  description: string;
+  shortDescription: string;
+  fullDescription: string;
+  image: string;
+  imageAlt: string;
   tags: string[];
   status: "live" | "in-development" | "coming-soon";
   links?: {
-    website?: string;
     playStore?: string;
     appStore?: string;
-    github?: string;
   };
 };
 
@@ -39,7 +40,6 @@ export type SiteContent = {
   projects: {
     heading: string;
     description: string;
-    items: Project[];
   };
   contact: {
     heading: string;

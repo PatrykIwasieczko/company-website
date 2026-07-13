@@ -33,24 +33,31 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 src/
-├── app/                  # Next.js routes (home, privacy)
+├── app/
+│   ├── projects/[slug]/     # Project detail, privacy, terms
+│   └── ...                  # Home, site-wide privacy
 ├── components/
-│   ├── layout/           # Header, Footer
-│   ├── sections/         # Hero, About, Projects, Contact
-│   └── ui/               # shadcn components
+│   ├── layout/              # Header, Footer
+│   ├── projects/            # ProjectCard
+│   ├── sections/            # Hero, About, Projects, Contact
+│   └── ui/                  # shadcn components
 └── content/
-    ├── site.ts           # All site copy & project data (edit this first)
-    └── types.ts          # Content TypeScript types
+    ├── site.ts              # Company-wide copy
+    ├── projects.ts          # Project data (edit this for apps)
+    └── types.ts
+public/projects/             # Project cover images
 ```
 
 ## Customizing content
 
-Edit `src/content/site.ts` to replace dummy placeholders:
+Edit `src/content/site.ts` for company-wide content and `src/content/projects.ts` for individual apps:
 
 - Company name, tagline, description
 - Your name, role, bio, email, location
-- Commercial projects (name, description, tags, status, links)
+- Each project: slug, name, short/full descriptions, image, tags, status
 - Navigation items
+
+Each project gets its own route at `/projects/[slug]` with linked privacy policy and terms pages (required for Google Play).
 
 Update `metadataBase` in `src/app/layout.tsx` when you have a real domain.
 
@@ -59,8 +66,8 @@ Update `metadataBase` in `src/app/layout.tsx` when you have a real domain.
 Before submitting your developer account, make sure to:
 
 1. Deploy the site to a public URL (Vercel, Netlify, etc.)
-2. Replace all dummy content in `src/content/site.ts`
-3. Update the privacy policy at `/privacy` with app-specific details
+2. Replace dummy content in `src/content/site.ts` and `src/content/projects.ts`
+3. Update per-app legal pages at `/projects/[slug]/privacy` and `/projects/[slug]/terms`
 4. Use your real email and company/developer name everywhere
 5. Point your Play Console website field to the deployed URL
 
