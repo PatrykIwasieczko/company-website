@@ -29,8 +29,8 @@ const statusVariants: Record<
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`} className="group block h-full">
-      <Card className="h-full overflow-hidden transition-shadow hover:shadow-md">
-        <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+      <Card className="h-full overflow-hidden border-border/60 bg-card/70 transition-[transform,box-shadow,border-color] hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_0_0_1px_color-mix(in_oklch,var(--primary),transparent_70%),0_18px_60px_-22px_color-mix(in_oklch,var(--primary),transparent_70%)]">
+        <div className="relative aspect-[16/9] overflow-hidden bg-muted/30">
           <Image
             src={project.image}
             alt={project.imageAlt}
@@ -38,6 +38,7 @@ export function ProjectCard({ project }: { project: Project }) {
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             sizes="(max-width: 640px) 100vw, 50vw"
           />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-transparent opacity-90" />
         </div>
 
         <CardHeader>

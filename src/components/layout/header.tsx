@@ -8,13 +8,15 @@ export function Header() {
   const { company, navigation } = siteContent;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight transition-opacity hover:opacity-80"
+          className="text-lg font-semibold tracking-tight transition-opacity hover:opacity-90"
         >
-          {company.name}
+          <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            {company.name}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 sm:flex">
@@ -22,7 +24,10 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+              className={cn(
+                buttonVariants({ variant: "ghost", size: "sm" }),
+                "text-muted-foreground hover:text-foreground"
+              )}
             >
               {item.label}
             </a>

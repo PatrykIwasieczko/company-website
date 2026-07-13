@@ -7,7 +7,7 @@ export function Projects() {
   const { projects: projectsSection } = siteContent;
 
   return (
-    <section id="projects" className="scroll-mt-16 border-t border-border/60 bg-muted/20">
+    <section id="projects" className="scroll-mt-16 border-t border-border/60">
       <div className="mx-auto max-w-5xl px-6 py-20">
         <h2 className="text-3xl font-semibold tracking-tight">
           {projectsSection.heading}
