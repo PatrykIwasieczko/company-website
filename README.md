@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Company Website
 
-## Getting Started
+A static company/developer website built with Next.js, Tailwind CSS, and shadcn/ui. Designed to showcase your profile, commercial projects, and contact details — including a privacy policy page useful for Google Play developer account setup.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, static content)
+- **Tailwind CSS v4**
+- **shadcn/ui** (base-nova style)
+- **Vitest** + **React Testing Library** (lightweight snapshot & content tests)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm run lint` | Run ESLint |
+| `npm run test` | Run tests once |
+| `npm run test:watch` | Run tests in watch mode |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                  # Next.js routes (home, privacy)
+├── components/
+│   ├── layout/           # Header, Footer
+│   ├── sections/         # Hero, About, Projects, Contact
+│   └── ui/               # shadcn components
+└── content/
+    ├── site.ts           # All site copy & project data (edit this first)
+    └── types.ts          # Content TypeScript types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customizing content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit `src/content/site.ts` to replace dummy placeholders:
 
-## Deploy on Vercel
+- Company name, tagline, description
+- Your name, role, bio, email, location
+- Commercial projects (name, description, tags, status, links)
+- Navigation items
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Update `metadataBase` in `src/app/layout.tsx` when you have a real domain.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Google Play checklist (v1)
+
+Before submitting your developer account, make sure to:
+
+1. Deploy the site to a public URL (Vercel, Netlify, etc.)
+2. Replace all dummy content in `src/content/site.ts`
+3. Update the privacy policy at `/privacy` with app-specific details
+4. Use your real email and company/developer name everywhere
+5. Point your Play Console website field to the deployed URL
+
+## Testing
+
+Tests are intentionally minimal — snapshot tests for key sections plus a content sanity check. Vitest is the recommended choice for new Next.js projects (faster than Jest, native ESM support).
+
+```bash
+npm run test
+```
+
+## Deployment
+
+The site is fully static-friendly. Deploy to any platform that supports Next.js:
+
+```bash
+npm run build
+```
+
+Recommended: [Vercel](https://vercel.com) for zero-config Next.js hosting.
