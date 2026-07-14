@@ -29,6 +29,7 @@ export type SiteContent = {
     role: string;
     bio: string;
     email: string;
+    googlePlayName: string;
     location: string;
   };
   navigation: NavItem[];

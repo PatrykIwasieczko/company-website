@@ -7,7 +7,9 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-16">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="text-3xl font-semibold tracking-tight">{about.heading}</h2>
+        <h2 className="section-heading text-3xl font-semibold tracking-tight">
+          {about.heading}
+        </h2>
         <p className="mt-2 text-muted-foreground">{owner.name}</p>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-2">
@@ -36,7 +38,7 @@ export function About() {
 
         <div className="mt-10 flex flex-wrap gap-2">
           <Badge variant="secondary">{owner.location}</Badge>
-          <Badge variant="outline">Independent Developer</Badge>
+          <Badge variant="outline">Google Play: {owner.googlePlayName}</Badge>
         </div>
       </div>
     </section>

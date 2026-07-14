@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-16">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="text-3xl font-semibold tracking-tight">
+        <h2 className="section-heading text-3xl font-semibold tracking-tight">
           {contact.heading}
         </h2>
         <p className="mt-3 max-w-xl text-muted-foreground">

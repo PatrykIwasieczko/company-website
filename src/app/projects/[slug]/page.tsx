@@ -73,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         ))}
       </div>
 
-      <h1 className="mt-4 text-4xl font-semibold tracking-tight">
+      <h1 className="section-heading mt-4 text-4xl font-semibold tracking-tight">
         {project.name}
       </h1>
 

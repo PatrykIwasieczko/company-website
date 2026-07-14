@@ -20,10 +20,7 @@ export function Hero() {
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="#projects"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "shadow-[0_0_0_1px_color-mix(in_oklch,var(--primary),transparent_65%),0_0_32px_color-mix(in_oklch,var(--primary),transparent_78%)]"
-            )}
+            className={cn(buttonVariants({ size: "lg" }))}
           >
             View projects
           </a>
