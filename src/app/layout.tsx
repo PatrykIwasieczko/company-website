@@ -23,7 +23,10 @@ export const metadata: Metadata = {
     template: `%s | ${siteContent.company.name}`,
   },
   description: siteContent.company.description,
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://patryk-iwasieczko.vercel.app"),
+  verification: {
+    google: "hYwBEyu_lG-x4TAdADPlaFMQfNf9zkEKaIPX8fMP_ys",
+  },
   openGraph: {
     title: siteContent.company.name,
     description: siteContent.company.tagline,
