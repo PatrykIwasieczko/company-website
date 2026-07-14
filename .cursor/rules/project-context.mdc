@@ -1,0 +1,58 @@
+---
+description: Project goal, owner info, architecture, and conventions for the company website
+alwaysApply: true
+---
+
+# Company Website — Agent Context
+
+## Goal
+
+Professional public website for **Ars Cras Patryk Iwasieczko** — company profile, commercial app showcase, contact details, and standard legal pages per product.
+
+## Owner
+
+- Company: Ars Cras Patryk Iwasieczko
+- Name: Patryk Iwasieczko
+- Google Play: Jordi_Jor
+- Email: patryk.iwasieczko@gmail.com
+
+## Stack
+
+Next.js 16 (App Router) · Tailwind v4 · shadcn/ui · TypeScript · Vitest + RTL (minimal snapshots)
+
+**No backend** — all content is static in `src/content/`. No GraphQL, RTK Query, or CMS unless explicitly requested.
+
+## Key files
+
+| Purpose | Location |
+|---------|----------|
+| Site-wide copy | `src/content/site.ts` |
+| Projects list | `src/content/projects.ts` |
+| Types | `src/content/types.ts` |
+| Theme / cyberpunk palette | `src/app/globals.css` |
+| Project images | `public/projects/` |
+
+## Routes
+
+- `/` — single-page home (Hero, About, Projects, Contact)
+- `/projects/[slug]` — project detail
+- `/projects/[slug]/privacy` · `/projects/[slug]/terms` — per-app legal pages
+- `/privacy` — site-wide privacy policy
+
+Current projects: **flowbit**, **no-wez-zgadnij**
+
+## Design
+
+Subtle **cyberpunk** — dark theme, cyan/magenta accents, readable Geist fonts. Avoid performance-heavy CSS: no `background-attachment: fixed`, no full-screen overlays, no `backdrop-blur`, no animated box-shadows on scroll.
+
+## Conventions
+
+- Edit content in `src/content/`, not hardcoded in components
+- New projects: add to `projects.ts` → routes auto-generate via `generateStaticParams`
+- Keep diffs minimal; match existing component/style patterns
+- Run `npm run build` and `npm run test` after substantive changes
+- Do not commit unless asked
+
+## Next.js note
+
+This repo uses Next.js 16 with breaking changes vs older versions. Check `node_modules/next/dist/docs/` if unsure about APIs.

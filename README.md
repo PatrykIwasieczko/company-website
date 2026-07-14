@@ -1,6 +1,6 @@
 # Company Website
 
-A static company/developer website built with Next.js, Tailwind CSS, and shadcn/ui. Designed to showcase your profile, commercial projects, and contact details — including a privacy policy page useful for Google Play developer account setup.
+A static company/developer website built with Next.js, Tailwind CSS, and shadcn/ui. Showcases the company profile, commercial projects, and contact details.
 
 ## Stack
 
@@ -57,19 +57,19 @@ Edit `src/content/site.ts` for company-wide content and `src/content/projects.ts
 - Each project: slug, name, short/full descriptions, image, tags, status
 - Navigation items
 
-Each project gets its own route at `/projects/[slug]` with linked privacy policy and terms pages (required for Google Play).
+Each project gets its own route at `/projects/[slug]` with linked privacy policy and terms pages.
 
 Update `metadataBase` in `src/app/layout.tsx` when you have a real domain.
 
-## Google Play checklist (v1)
+## Pre-launch checklist
 
-Before submitting your developer account, make sure to:
+Before going live, make sure to:
 
 1. Deploy the site to a public URL (Vercel, Netlify, etc.)
 2. Replace dummy content in `src/content/site.ts` and `src/content/projects.ts`
 3. Update per-app legal pages at `/projects/[slug]/privacy` and `/projects/[slug]/terms`
 4. Use your real email and company/developer name everywhere
-5. Point your Play Console website field to the deployed URL
+5. Point any external profiles (e.g. app store listings) to the deployed URL
 
 ## Testing
 
