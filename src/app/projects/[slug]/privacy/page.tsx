@@ -2,6 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { buttonVariants } from "@/components/ui/button";
+import {
+  FlowbitPrivacyPolicy,
+  flowbitPrivacyMeta,
+} from "@/content/legal/flowbit-privacy";
 import { getAllProjectSlugs, getProjectBySlug } from "@/content/projects";
 import { siteContent } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -22,6 +26,13 @@ export async function generateMetadata({ params }: LegalPageProps) {
     return { title: "Privacy Policy" };
   }
 
+  if (slug === "flowbit") {
+    return {
+      title: flowbitPrivacyMeta.title,
+      description: flowbitPrivacyMeta.description,
+    };
+  }
+
   return {
     title: `${project.name} Privacy Policy`,
     description: `Privacy policy for the ${project.name} app.`,
@@ -34,6 +45,31 @@ export default async function ProjectPrivacyPage({ params }: LegalPageProps) {
 
   if (!project) {
     notFound();
+  }
+
+  if (slug === "flowbit") {
+    return (
+      <div className="mx-auto max-w-3xl px-6 py-12 sm:py-16">
+        <Link
+          href={`/projects/${project.slug}`}
+          className={cn(
+            buttonVariants({ variant: "ghost", size: "sm" }),
+            "mb-8",
+          )}
+        >
+          ← Back to {project.name}
+        </Link>
+
+        <h1 className="text-3xl font-semibold tracking-tight">
+          Privacy Policy for FlowBit
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Last updated: {flowbitPrivacyMeta.lastUpdated}
+        </p>
+
+        <FlowbitPrivacyPolicy />
+      </div>
+    );
   }
 
   const { company, owner } = siteContent;
