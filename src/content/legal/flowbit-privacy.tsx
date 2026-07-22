@@ -4,7 +4,7 @@ const linkClassName =
   "text-foreground underline-offset-4 hover:underline";
 
 export const flowbitPrivacyMeta = {
-  lastUpdated: "July 18, 2026",
+  lastUpdated: "July 21, 2026",
   title: "FlowBit Privacy Policy",
   description:
     "How FlowBit handles information on Android and iOS — no accounts, no ads, local-only workout data.",
@@ -149,19 +149,20 @@ export function FlowbitPrivacyPolicy() {
             (controlled in Settings).
           </li>
           <li>
-            <strong className="text-foreground">Keep screen on (wake lock)</strong>{" "}
-            — optional; only while you use the Timer as described in Settings, so
-            the screen does not sleep mid-workout.
+            <strong className="text-foreground">Keep screen on</strong> —
+            optional; keeps the display awake on the Timer tab or while a workout
+            is running (controlled in Settings).
           </li>
           <li>
-            <strong className="text-foreground">Internet</strong> — used by the
-            operating system / store when you buy or restore FlowBit Pro. The App
-            does not send your workout plans to our servers.
+            <strong className="text-foreground">Store billing</strong> — Google
+            Play / the App Store handle FlowBit Pro purchases and restores. The
+            App does not send your workout plans to our servers.
           </li>
         </ul>
         <p className="mt-3 leading-relaxed">
-          Sound cues use the device&apos;s system sounds when enabled in
-          Settings.
+          Sound cues use short audio files bundled with the app (played on your
+          device) when enabled in Settings. Countdown 3-2-1 uses a soft system
+          click.
         </p>
       </section>
 
