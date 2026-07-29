@@ -4,7 +4,7 @@ const linkClassName =
   "text-foreground underline-offset-4 hover:underline";
 
 export const flowbitPrivacyMeta = {
-  lastUpdated: "July 21, 2026",
+  lastUpdated: "July 29, 2026",
   title: "FlowBit Privacy Policy",
   description:
     "How FlowBit handles information on Android and iOS — no accounts, no ads, local-only workout data.",
@@ -112,9 +112,15 @@ export function FlowbitPrivacyPolicy() {
               </tr>
               <tr className="border-b border-border/60 align-top">
                 <td className="py-3 pr-4">
-                  App settings (sound, vibration, countdown, keep-screen-on)
+                  App settings (sound, vibration, countdown)
                 </td>
                 <td className="py-3">To remember your preferences</td>
+              </tr>
+              <tr className="border-b border-border/60 align-top">
+                <td className="py-3 pr-4">Last-run workout snapshot</td>
+                <td className="py-3">
+                  So you can quickly rerun the workout you most recently started
+                </td>
               </tr>
               <tr className="align-top">
                 <td className="py-3 pr-4">FlowBit Pro unlock status</td>
@@ -149,9 +155,10 @@ export function FlowbitPrivacyPolicy() {
             (controlled in Settings).
           </li>
           <li>
-            <strong className="text-foreground">Keep screen on</strong> —
-            optional; keeps the display awake on the Timer tab or while a workout
-            is running (controlled in Settings).
+            <strong className="text-foreground">Keep screen on</strong> — while
+            you are on the Timer tab or a workout is running, the App keeps the
+            display awake so the timer can stay accurate. This is not a
+            user-controlled setting.
           </li>
           <li>
             <strong className="text-foreground">Store billing</strong> — Google
@@ -160,9 +167,10 @@ export function FlowbitPrivacyPolicy() {
           </li>
         </ul>
         <p className="mt-3 leading-relaxed">
-          Sound cues use short audio files bundled with the app (played on your
-          device) when enabled in Settings. Countdown 3-2-1 uses a soft system
-          click.
+          Sound and countdown cues use short audio files bundled with the App
+          (played on your device) when sound is enabled in Settings. Workouts
+          always start with a short 3-2-1 get-ready countdown. An optional
+          end-of-block countdown lead-in can be turned on or off in Settings.
         </p>
       </section>
 
@@ -264,12 +272,12 @@ export function FlowbitPrivacyPolicy() {
         <h2 className="text-xl font-medium text-foreground">9. Your choices</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
           <li>
-            Turn sound, vibration, countdown, and keep-screen-on on or off in{" "}
+            Turn sound, vibration, and countdown on or off in{" "}
             <strong className="text-foreground">Settings</strong>.
           </li>
           <li>
-            Delete saved plans inside the App, or clear App storage / uninstall to
-            remove local data.
+            Delete saved plans inside the App, dismiss Last run on the Timer tab,
+            or clear App storage / uninstall to remove local data.
           </li>
           <li>
             Manage or request refunds for purchases through Google Play or the App
